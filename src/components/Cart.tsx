@@ -49,7 +49,7 @@ const Cart = () => {
       </SheetTrigger>
       <SheetContent className='flex w-full flex-col pr-0 sm:max-w-lg'>
         <SheetHeader className='space-y-2.5 pr-6'>
-          {/* <SheetTitle>Cart ({itemCount})</SheetTitle> */}
+          <SheetTitle>Cart ({itemCount})</SheetTitle>
         </SheetHeader>
         {itemCount > 0 ? (
           <>
@@ -105,7 +105,7 @@ const Cart = () => {
               className='relative mb-4 h-60 w-60 text-muted-foreground'>
               <Image
                 src='/hippo-empty-cart.png'
-                fill
+               fill
                 alt='empty shopping cart hippo'
               />
             </div>
