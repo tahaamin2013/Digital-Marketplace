@@ -6,12 +6,13 @@ import { buttonVariants } from './ui/button'
 // import Cart from './Cart'
 // import { getServerSideUser } from '@/lib/payload-utils'
 import { cookies } from 'next/headers'
+import Cart from './Cart'
 // import UserAccountNav from './UserAccountNav'
 // import MobileNav from './MobileNav'
 
 const Navbar = async () => {
   const nextCookies = cookies()
-  // const { user } = await getServerSideUser(nextCookies)
+  const user  = null
 
   return (
     <div className='bg-white sticky z-50 top-0 inset-x-0 h-16'>
@@ -33,7 +34,7 @@ const Navbar = async () => {
 
               <div className='ml-auto flex items-center'>
                 <div className='hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6'>
-                  {/* {user ? null : (
+                  {user ? null : (
                     <Link
                       href='/sign-in'
                       className={buttonVariants({
@@ -41,9 +42,9 @@ const Navbar = async () => {
                       })}>
                       Sign in
                     </Link>
-                  )} */}
+                  )}
 
-                  {/* {user ? null : (
+                  {user ? null : (
                     <span
                       className='h-6 w-px bg-gray-200'
                       aria-hidden='true'
@@ -61,27 +62,26 @@ const Navbar = async () => {
                       })}>
                       Create account
                     </Link>
-                  )} */}
-{/* 
+                  )}
+
                   {user ? (
                     <span
                       className='h-6 w-px bg-gray-200'
                       aria-hidden='true'
                     />
-                  ) : null} */}
+                  ) : null}
 
-                  {/* {user ? null : (
+                  {user ? null : (
                     <div className='flex lg:ml-6'>
                       <span
                         className='h-6 w-px bg-gray-200'
                         aria-hidden='true'
                       />
                     </div>
-                  )} */}
+                  )}
 
                   <div className='ml-4 flow-root lg:ml-6'>
-                    {/* <Cart /> */}
-                    Cart
+                    <Cart />
                   </div>
                 </div>
               </div>
