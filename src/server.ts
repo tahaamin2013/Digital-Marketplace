@@ -9,11 +9,13 @@ const start = async () => {
   const payload = await getPayloadClient({
     initOptions: {
       express: app,
-      onInit: async (cms) => {
+      onInit: async (cms: any) => {
         cms.logger.info(`Admin URL: ${cms.getAdminURL()}`)
       },
     },
   })
+  
+
   app.use((req, res) => nextHandler(req, res))
   nextApp.prepare().then(() => {
     payload.logger.info('Next.js started')
